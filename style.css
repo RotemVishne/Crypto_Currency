@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    background: url('/assets/photos/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+    will-change: transform;
+}
+h1 {
+    color: white;
+    text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+#mainDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+.coinCard {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: calc(25% - 1rem);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.coinCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+.coinCard img {
+    margin: 0.5rem 0;
+}
+.coinImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin: 0.5rem 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.coinImg:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+#searchBox {
+    margin: 1rem auto;
+    display: block;
+    width: 50%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.toggle-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+.toggle-checkbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+.toggle-checkbox:checked:before {
+    background-color: #007bff;
+}
+.toggle-checkbox:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+.toggle-checkbox:checked:after {
+    transform: translateX(20px);
+}
+#chartContainer {
+    height: 500px;
+    width: 100%;
+}
+.about {
+    background: rgba(255, 255, 255, 0.8);
+    padding:  10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.about-img {
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-body ul {
+    padding: 0;
+    list-style: none;
+}
+.list-group-item {
+    border: none;
+    background: rgba(240, 240, 240, 0.9);
+    margin: 5px 0;
+    border-radius: 8px;
+}
+#chartContainer {
+    height: 370px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.progress {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
